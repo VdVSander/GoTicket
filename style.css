@@ -24,3 +24,25 @@
   padding-top: 15px;
   padding-left: 40px;
 }
+
+.menu-1{
+  vertical-align: bottom;
+  padding: 0;
+  margin: 0;
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 22px;
+  color: #656c78;
+}
+
+.menu-active{
+  vertical-align: bottom;
+  padding: 0;
+  margin: 0;
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 22px;
+  color: #34363b;
+}
