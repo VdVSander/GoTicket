@@ -1,0 +1,26 @@
+.right {
+  position: absolute;
+  right: 0px;
+  width: 300px;
+  padding: 10px;
+}
+
+.container1{
+  display: flex;
+  padding: 10px;
+}
+
+.box-1{
+  flex: 3
+}
+
+.box-2{
+  flex: 1
+}
+
+.para-1{
+  color: white;
+  text-align: center;
+  padding-top: 15px;
+  padding-left: 40px;
+}
