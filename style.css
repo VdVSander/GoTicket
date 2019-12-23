@@ -25,6 +25,22 @@
   padding-left: 40px;
 }
 
+.text1{
+  color: white;
+  font-size: 18px;
+}
+
+.subtext{
+  color: #cccfcd;
+  font-size: 14px;
+}
+
+.h2{
+  color: white;
+  font-size: 22px;
+}
+
+
 .menu-1{
   vertical-align: bottom;
   padding: 0;
