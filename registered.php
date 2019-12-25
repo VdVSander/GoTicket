@@ -46,12 +46,9 @@
     <br>
     <div class="container">
       <?php
-        $name = $_POST["name"];
-        echo <p class="para-1">
-          U heeft uw bedrijf . $name succesvol geregistreed voor onze service.
-          <br>Wij houden u op de hoogte wanneer onze service volledig in werking zal treden
-          <br>Bedankt voor uw deelname!
-        </p>
+        echo "<p class='para-1'> Je hebt je bedrijf: ";
+        echo $_POST['bedrijfsnaam'];
+        echo " succesvol geregistreerd! <br> We houden je op de hoogte van verdere ontwikkelingen. </p>";
       ?>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
