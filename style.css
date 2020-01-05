@@ -62,3 +62,9 @@
   font-size: 22px;
   color: #34363b;
 }
+
+.allert{
+  padding: 2px;
+  color: red;
+  font-size: 15px;
+}
