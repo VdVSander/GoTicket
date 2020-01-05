@@ -48,7 +48,7 @@
       <?php
         if($_POST[password] != $_POST[password_confirm] || $_POST[password] == "" || $_POST[password_confirm] == "")
         {
-          alert("Het wachtwoord werd niet correct ingevuld");
+          echo '<script>alert("Het wachtwoord werd niet correct ingevuld")</script>';
           header(location:"/register.html");
         }
         else
