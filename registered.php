@@ -47,7 +47,7 @@
     <div class="container">
       <?php
         echo "<p class='para-1'> Je hebt je bedrijf: ";
-        echo $_POST['bedrijfsnaam'];
+        echo $_POST['bedrijfsnaam']; 
         echo " succesvol geregistreerd! <br> We houden je op de hoogte van verdere ontwikkelingen. </p>";
       ?>
     </div>
