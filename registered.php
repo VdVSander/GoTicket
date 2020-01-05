@@ -48,7 +48,10 @@
       <?php
         if($_POST[password] != $_POST[password_confirm] || $_POST[password] == "" || $_POST[password_confirm] == "")
         {
-          echo "<script type='text/javascript'>alert("Het wachtwoord werd niet correct ingevuld.");</script>";
+          echo "<script>
+          alert('There are no fields to generate a report');
+          window.location.href='admin/ahm/panel';
+          </script>";
           header(location:"/register.html");
         }
         else
