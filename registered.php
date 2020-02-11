@@ -37,7 +37,7 @@
           <div class="right">
             <button type="button" id="login-button" class="btn btn-primary">Login</button>
             <script type="text/javascript">
-                document.getElementById("register-button").onclick = function () {location.href = "login.html";};
+                document.getElementById("login-button").onclick = function () {location.href = "login.html";};
             </script>
           </div>
         </div>
