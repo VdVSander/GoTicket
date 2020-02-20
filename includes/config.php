@@ -1,8 +1,8 @@
 <?php
-  return array(
-  $servername = "www.goticket.be";
+  $servername = "localhost";
   $username = "ticketsys_php";
   $password = "9r6W6&zo";
-  $dbname = "ticketsys_users";
-);
+  $dbname = "goticket";
+
+  $conn = mysqli_connect($servername,$username,$password,$dbname);
  ?>
