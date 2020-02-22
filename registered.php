@@ -47,36 +47,33 @@
     <br>
     <div class="container">
       <?php
-        if($_POST[password] != $_POST[password_confirm] || $_POST[password] == "" || $_POST[password_confirm] == "")
+        $conf = include('config.php');
+        // Create connection
+        $conn = new mysqli($conf[0], $conf[1], $conf[2], $conf[3]);
+        // Check connection
+        if ($conn->connect_error)
         {
-          header("Location: /wachtwoordfout.html");
+          die("Connection failed: " . $conn->connect_error);
         }
         else
         {
-          echo "<p class='para-1'> Je hebt je bedrijf: ";
-          echo $_POST['bedrijfsnaam'];
-          echo " succesvol geregistreerd! <br> We houden je op de hoogte van verdere ontwikkelingen. </p>";
-          $conf = include('config.php');
-          // Create connection
-          $conn = new mysqli($conf[0], $conf[1], $conf[2], $conf[3]);
-          // Check connection
-          if ($conn->connect_error)
-          {
-            die("Connection failed: " . $conn->connect_error);
-          }
-
+          $name = $_POST[bedrijfsnaam];
+          $email = $_POST[email];
+          $passwordHashed = password_hash($POST[password], PASSWORD_DEFAULT);
           $sql = "INSERT INTO Organisaties (Naam, Email, wachtwoord)
-          VALUES ($_POST[bedrijfsnaam], $_POST[email], $_POST[password])";
-
+          VALUES ($name, $email, $passwordHashed)";
           if ($conn->query($sql) === TRUE)
           {
             echo "New record created successfully";
+            echo "<p class='para-1'> Je hebt je bedrijf: ";
+            echo $_POST['bedrijfsnaam'];
+            echo " succesvol geregistreerd! <br> We houden je op de hoogte van verdere ontwikkelingen. </p>";
           } else
           {
             echo "Error: " . $sql . "<br>" . $conn->error;
           }
-          $conn->close();
-          }
+        }
+        $conn->close();
       ?>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
