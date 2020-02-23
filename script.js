@@ -22,10 +22,14 @@ form.addEventListener('submit', (e) => {
     messages.push('Wachtwoorden zijn niet hetzelfde')
   }
 
+  if(name.value.includes("[") || name.value.includes("]") || name.value.includes("(") || name.value.includes(")") || name.value.includes("/") || name.value.includes("\\"))
+  {
+    message.push("De gebruikersnaam mag deze karrakters niet bevatten:[]()/\\");
+  }
+
   if(messages.length > 0)
   {
     e.preventDefault();
     errorElement.innerText = messages.join(', ')
-
   }
 })

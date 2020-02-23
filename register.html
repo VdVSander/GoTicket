@@ -50,7 +50,7 @@
   <div class="card mx-auto p-3" style="width:35rem;">
     <h1>Registreer</h1>
     <div id="error" style="color:red; font-size:15px;"></div>
-    <form action="registered.php" method="POST" id="form">
+    <form action="icludes/signup.php" method="POST" id="form">
       <fieldset>
         <div id="legend">
           <legend class="h2">Registreer je organisatie</legend>
@@ -60,7 +60,7 @@
           <div class="form-group col-md-6">
             <label for="name">Organisatie</label>
             <div class="controls">
-              <input type="text" id="name" name="bedrijfsnaam" class="form-control" required>
+              <input type="text" id="name" name="name" class="form-control" required>
               <p class="subtext">Geef hier de naam van uw organisatie</p>
             </div>
           </div>
@@ -95,7 +95,7 @@
         </div>
         <!-- Button -->
         <div class="controls">
-          <button class="btn btn-primary">Registreer</button>
+          <button class="btn btn-primary" type="submit" name="signup-submit">Registreer</button>
         </div>
       </fieldset>
     </form>
