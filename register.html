@@ -6,6 +6,7 @@
   <title>Go Ticket - Uw website voor tickets</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 
 <body style="background-image: url('achtergrond.jpg'); background-size: cover; background-repeat: no-repeat;
@@ -48,7 +49,8 @@
   <br>
   <div class="card mx-auto p-3" style="width:35rem;">
     <h1>Registreer</h1>
-    <form action="registered.php" method="POST">
+    <div id="error" style="color:red; font-size:15px;"></div>
+    <form action="includes/signup.php" method="POST" id="form">
       <fieldset>
         <div id="legend">
           <legend class="h2">Registreer je organisatie</legend>
@@ -58,7 +60,7 @@
           <div class="form-group col-md-6">
             <label for="name">Organisatie</label>
             <div class="controls">
-              <input type="text" id="username" name="bedrijfsnaam" class="form-control">
+              <input type="text" id="name" name="name" class="form-control" required>
               <p class="subtext">Geef hier de naam van uw organisatie</p>
             </div>
           </div>
@@ -67,7 +69,7 @@
           <div class="form-group col-md-6">
             <label for="email">E-mail</label>
             <div class="controls">
-              <input type="text" id="email" name="email" class="form-control">
+              <input type="text" id="email" name="email" class="form-control" type="email" required>
               <p class="subtext">E-mail adres waarop wij u mogen contacteren</p>
             </div>
           </div>
@@ -77,7 +79,7 @@
           <div class="form-group col-md-6">
             <label for="password">Wachtwoord</label>
             <div class="controls">
-              <input type="password" id="password" name="password" class="form-control">
+              <input type="password" id="password" name="password" class="form-control" required>
               <p class="subtext">Uw wachtwoord moet minstens 4 karrakters lang zijn</p>
             </div>
           </div>
@@ -86,14 +88,14 @@
           <div class="form-group col-md-6">
             <label for="password_confirm">Wachtwoord (bevestiging)</label>
             <div class="controls">
-              <input type="password" id="password_confirm" name="password_confirm" class="form-control">
+              <input type="password" id="passwordConfirm" name="password_confirm" class="form-control" required>
               <p class="subtext">Bevestig hier uw wachtwoord</p>
             </div>
           </div>
         </div>
         <!-- Button -->
         <div class="controls">
-          <button class="btn btn-primary">Registreer</button>
+          <button class="btn btn-primary" type="submit" name="signup-submit">Registreer</button>
         </div>
       </fieldset>
     </form>
