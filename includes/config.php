@@ -1,4 +1,5 @@
 <?php
+//Database connection info
   $servername = "localhost";
   $username = "ticketsys_php";
   $password = "9r6W6&zo";
@@ -10,4 +11,8 @@
   {
     die("Connection failed: ".mysqli_connect_error());
   }
+
+  //E-Mail IntlDateFormatter
+  $to_mail = "sander.vandeven86@gmail.com";
+  $subject = "Nieuwe registratie";
  ?>
