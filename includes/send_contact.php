@@ -20,6 +20,10 @@
     require 'config.php';
     $content="Van: $name \n E-mail: $email \n Bericht: $message";
     mail($to_mail, $subject, $content);
-    header("Location: ../contact-verzonden.html")
+    header("Location: ../contact-verzonden.html");
+  }
+  else
+  {
+    header("Location: ../contact.html?error=btnNotPressed");
   }
 ?>
