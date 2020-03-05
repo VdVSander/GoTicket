@@ -13,6 +13,6 @@
   }
 
   //E-Mail IntlDateFormatter
-  $to_mail = "sander.vandeven86@gmail.com";
+  $to_mail = "info@goticket.be";
   $subject = "Nieuwe registratie";
  ?>
