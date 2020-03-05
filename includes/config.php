@@ -14,5 +14,5 @@
 
   //E-Mail IntlDateFormatter
   $to_mail = "info@goticket.be";
-  $subject = "Nieuwe registratie";
+  $subject_reg = "Nieuwe registratie";
  ?>

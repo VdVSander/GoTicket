@@ -36,7 +36,7 @@
           mysqli_stmt_bind_param($stmt, "sss", $name, $email, $passwordHashed);
           mysqli_stmt_execute($stmt);
           $message = $name." heeft zich geregistreerd op de website!";
-          mail($to_mail,$subject,$message);
+          mail($to_mail,$subject_reg,$message);
           header("Location: ../registered.html");
         }
       }
