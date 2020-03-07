@@ -34,7 +34,7 @@
             session_start();
             $_SESSION['email'] = $email;
             $_SESSION['organisatie'] = $row['naam'];
-            header("Location: ../loggedin.html");
+            header("Location: ../loggedin.php");
           }
           else
           {

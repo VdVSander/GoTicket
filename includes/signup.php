@@ -37,7 +37,7 @@
           mysqli_stmt_execute($stmt);
           $message = $name." heeft zich geregistreerd op de website!";
           mail($to_mail,$subject_reg,$message);
-          header("Location: ../registered.html");
+          header("Location: ../registered.php");
         }
       }
     }

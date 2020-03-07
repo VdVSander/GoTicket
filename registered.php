@@ -37,9 +37,25 @@
         </div>
         <div class="box-2">
           <div class="right">
-            <button type="button" id="login-button" class="btn btn-primary">Login</button>
+            <button type="button" id="register-button" class="btn btn-primary">Verkoop tickets</button>
+            <?php
+              if(isset($_SESSION['email']))
+              {
+                echo '<button type="button" id="logout-button" class="btn btn-primary">Logout</button>';
+              }
+              else
+              {
+                <button type="button" id="login-button" class="btn btn-primary">Login</button>
+              }
+             ?>
             <script type="text/javascript">
-                document.getElementById("login-button").onclick = function () {location.href = "login.html";};
+                document.getElementById("login-button").onclick = function () {location.href = "login.php";};
+            </script>
+            <script type="text/javascript">
+                document.getElementById("logout-button").onclick = function () {location.href = "includes/logout.php";};
+            </script>
+            <script type="text/javascript">
+                document.getElementById("register-button").onclick = function () {location.href = "register.html";};
             </script>
           </div>
         </div>
