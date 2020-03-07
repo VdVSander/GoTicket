@@ -1,4 +1,6 @@
-
+<?php
+  session_start();
+ ?>
 <!DOCTYPE html>
 <html lang=nl dir="ltr">
   <head>
@@ -6,7 +8,6 @@
     <title>Go Ticket - Uw website voor tickets</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="favicon.ico">
   </head>
   <body style="background-image: url('achtergrond.jpg'); background-size: cover; background-repeat: no-repeat;
   background-attachment: fixed;">
@@ -14,26 +15,26 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <a href="https://www.goticket.be"><img src="GoTicketlogo.png" alt="Logo" style="width:100px;height:40px";></a>
+      <p style="margin-left:50px">(!) Opgelet! Deze website is een schoolproject en is dus niet in werking.</p>
+      <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-          <img src="GoTicketlogo.png" alt="Logo" style="width:100px;height:40px";>
-          <p style="margin-left:50px">(!) Opgelet! Deze website is een schoolproject en is dus niet in werking.</p>
           <li class="menu-active">
-            <a class="menu-active" href="index.html">Home</a>
+            <a class="menu-active" href="index.php">Home</a>
           </li>
           <li class="menu-1">
-            <a class="menu-1" href="tickets.html">Tickets</a>
+            <a class="menu-1" href="tickets.php">Tickets</a>
           </li>
           <li class="menu-1">
             <a class="menu-1" href="contact.html">Contact</a>
           </li>
         </ul>
-      </div>
+    </div>
     </nav>
     <div class="container1">
       <div class="row">
         <div class="box-1">
-          <h1 class="para-1">Welkom</h1>
+          <h1 class="para-1">Tickets</h1>
         </div>
         <div class="box-2">
           <div class="right">
