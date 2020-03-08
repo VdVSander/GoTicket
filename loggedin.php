@@ -64,7 +64,7 @@
       </div>
       <div class="container1">
         <?php
-          echo '<p>Je bent ingelogged als: ' + $_SESSION['organisatie'] + '</p>';
+          echo '<p>Je bent ingelogged als: '.$_SESSION['organisatie'].'</p>';
          ?>
       </div>
     </div>
