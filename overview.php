@@ -47,7 +47,7 @@
               }
               else
               {
-                <button type="button" id="login-button" class="btn btn-primary">Login</button>
+                echo '<button type="button" id="login-button" class="btn btn-primary">Login</button>';
               }
              ?>
             <script type="text/javascript">
