@@ -24,7 +24,7 @@
             <a class="menu-active" href="index.php">Home</a>
           </li>
           <li class="menu-1">
-            <a class="menu-1" href="tickets.html">Tickets</a>
+            <a class="menu-1" href="tickets.php">Tickets</a>
           </li>
           <li class="menu-1">
             <a class="menu-1" href="contact.html">Contact</a>
