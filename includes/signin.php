@@ -7,7 +7,7 @@
 
     if(empty($mail) || empty($password))
     {
-      header("Location: ../signin.php?php?error=not_enough_data");
+      header("Location: ../login.php?php?error=not_enough_data");
     }
     else
     {
@@ -15,7 +15,7 @@
       $stmt = mysqli_stmt_init($conn);
       if(!mysqli_stmt_prepare($stmt, $sql))
       {
-        header("Location: ../signin.php?error=SQL_error1");
+        header("Location: ../login.php?error=SQL_error1");
       }
       else
       {
@@ -27,7 +27,7 @@
           $pwdCheck = password_verify($password, $row['wachtwoord']);
           if($pwdCheck == false)
           {
-            header("Location: ../signin.php?error=wrongpassword");
+            header("Location: ../login.php?error=wrongpassword");
           }
           else if ($pwdCheck == true)
           {
@@ -38,18 +38,18 @@
           }
           else
           {
-            header("Location: ../signin.php?error=pwdisnopwd");
+            header("Location: ../login.php?error=pwdisnopwd");
           }
         }
         else
         {
-          header("Location: ../signin.php?error=nouser");
+          header("Location: ../login.php?error=nouser");
         }
       }
     }
   }
   else
   {
-    header("Location: ../signin.php?error=button_not_pressed");
+    header("Location: ../login.php?error=button_not_pressed");
   }
  ?>
