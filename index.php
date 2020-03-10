@@ -36,9 +36,15 @@
         </div>
         <div class="box-2">
           <div class="right">
+            <?php
+              if (isset($_SESSION['email']))
+              {
+                echo '<h3> Welkom '.$_SESSION['organisatie'].'</h3>';
+              }
+             ?>
             <button type="button" id="register-button" class="btn btn-primary">Verkoop tickets</button>
             <?php
-              if(isset($_SESSION['email']))
+              if (isset($_SESSION['email']))
               {
                 echo '<button type="button" id="logout-button" class="btn btn-primary">Logout</button>';
               }
@@ -70,6 +76,9 @@
     </div>
     <div class="px-5 mt-3 mb-4">
       <h2>Komende evenementen</h2>
+      <?php
+        echo $_SESSION['email'];
+       ?>
     </div>
     <div class="px-5 mt-3 mb-3">
     <div class="row">

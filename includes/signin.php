@@ -32,7 +32,7 @@
           else if ($pwdCheck == true)
           {
             session_start();
-            $_SESSION['email'] = $email;
+            $_SESSION['email'] = $row['email'];
             $_SESSION['organisatie'] = $row['naam'];
             header("Location: ../loggedin.php");
           }
