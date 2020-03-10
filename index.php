@@ -42,14 +42,15 @@
                 echo '<h3> Welkom '.$_SESSION['organisatie'].'</h3>';
               }
              ?>
-            <button type="button" id="register-button" class="btn btn-primary">Verkoop tickets</button>
             <?php
               if (isset($_SESSION['email']))
               {
+                echo '<button type="button" id="dashboard-button" class="btn btn-primary">Dashboard</button>';
                 echo '<button type="button" id="logout-button" class="btn btn-primary">Logout</button>';
               }
               else
               {
+                echo '<button type="button" id="register-button" class="btn btn-primary">Verkoop tickets</button>';
                 echo '<button type="button" id="login-button" class="btn btn-primary">Login</button>';
               }
              ?>
@@ -58,6 +59,9 @@
             </script>
             <script type="text/javascript">
                 document.getElementById("logout-button").onclick = function () {location.href = "includes/logout.php";};
+            </script>
+            <script type="text/javascript">
+                document.getElementById("dashboard-button").onclick = function () {location.href = "dashboard.php";};
             </script>
             <script type="text/javascript">
                 document.getElementById("register-button").onclick = function () {location.href = "register.php";};
@@ -76,9 +80,6 @@
     </div>
     <div class="px-5 mt-3 mb-4">
       <h2>Komende evenementen</h2>
-      <?php
-        echo $_SESSION['email'];
-       ?>
     </div>
     <div class="px-5 mt-3 mb-3">
     <div class="row">
