@@ -85,6 +85,7 @@
       <div class="mt-4">
         <div class="d-flex justify-content-center links">
           <a href="#">Wachtwoord vergeten?</a>
+          <a href="register_new_user.php">Nog geen account?</a>
         </div>
       </div>
     </div>
