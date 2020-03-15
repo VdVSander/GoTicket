@@ -1,5 +1,7 @@
-<!DOCTYPE html lang=nl dir="ltr">
-
+<?php
+  session_start();
+ ?>
+<!DOCTYPE html>
 <head>
   <meta charset="utf-8">
   <title>Go Ticket - Uw website voor tickets</title>
@@ -18,10 +20,10 @@
     <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
         <li class="menu-active">
-          <a class="menu-active" href="index.html">Home</a>
+          <a class="menu-active" href="index.php">Home</a>
         </li>
         <li class="menu-1">
-          <a class="menu-1" href="tickets.html">Tickets</a>
+          <a class="menu-1" href="tickets.php">Tickets</a>
         </li>
         <li class="menu-1">
           <a class="menu-1" href="contact.html">Contact</a>

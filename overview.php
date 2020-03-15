@@ -1,4 +1,6 @@
-
+<?php
+  session_start();
+ ?>
 <!DOCTYPE html>
 <html lang=nl dir="ltr">
   <head>
@@ -19,10 +21,10 @@
           <img src="GoTicketlogo.png" alt="Logo" style="width:100px;height:40px";>
           <p style="margin-left:50px">(!) Opgelet! Deze website is een schoolproject en is dus niet in werking.</p>
           <li class="menu-active">
-            <a class="menu-active" href="index.html">Home</a>
+            <a class="menu-active" href="index.php">Home</a>
           </li>
           <li class="menu-1">
-            <a class="menu-1" href="tickets.html">Tickets</a>
+            <a class="menu-1" href="tickets.php">Tickets</a>
           </li>
           <li class="menu-1">
             <a class="menu-1" href="contact.html">Contact</a>
@@ -38,12 +40,24 @@
         <div class="box-2">
           <div class="right">
             <button type="button" id="register-button" class="btn btn-primary">Verkoop tickets</button>
-            <button type="button" id="login-button" class="btn btn-primary">Login</button>
+            <?php
+              if(isset($_SESSION['email']))
+              {
+                echo '<button type="button" id="logout-button" class="btn btn-primary">Logout</button>';
+              }
+              else
+              {
+                echo '<button type="button" id="login-button" class="btn btn-primary">Login</button>';
+              }
+             ?>
             <script type="text/javascript">
-                document.getElementById("login-button").onclick = function () {location.href = "login.html";};
+                document.getElementById("login-button").onclick = function () {location.href = "login.php";};
             </script>
             <script type="text/javascript">
-                document.getElementById("register-button").onclick = function () {location.href = "register.html";};
+                document.getElementById("logout-button").onclick = function () {location.href = "includes/logout.php";};
+            </script>
+            <script type="text/javascript">
+                document.getElementById("register-button").onclick = function () {location.href = "register.php";};
             </script>
           </div>
         </div>
