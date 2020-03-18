@@ -74,20 +74,23 @@
               <input type="text" id="surname" name="surname" class="form-control" required>
               <p class="subtext">Geef hier uw achternaam</p>
             </div>
+            </div>
             <div class="form-group col-md-6">
               <label for="name">Voornaam</label>
               <div class="controls">
                 <input type="text" id="firstname" name="firstname" class="form-control" required>
                 <p class="subtext">Geef hier uw voornaam</p>
               </div>
-              <div class="form-group col-md-6">
-                <label for="name">Geboortedatum</label>
-                <div class="controls">
-                  <input type="date" id="birthdate" name="birthdate" class="form-control" required>
-                  <p class="subtext">Geef hier uw geboortedatum</p>
                 </div>
+              </div>
+          <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="name">Geboortedatum</label>
+            <div class="controls">
+              <input type="date" id="birthdate" name="birthdate" class="form-control" required>
+              <p class="subtext">Geef hier uw geboortedatum</p>
+            </div>
           </div>
-
           <!-- E-mail -->
           <div class="form-group col-md-6">
             <label for="email">E-mail</label>
