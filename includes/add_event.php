@@ -8,8 +8,7 @@
     $postalcode = $_POST['postalcode'];
     $location = $_POST['location'];
     $startdate = $_POST['start_date'];
-    $stopdate = $_POST['stopdate'];
-    $tickettype = $_POST['ticket_type'];
+    $stopdate = $_POST['stop_date'];
 
     //Check if eventname allready exists
     $sql = "SELECT * FROM evenementen WHERE naam=?;";
