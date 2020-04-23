@@ -11,7 +11,7 @@
     }
     else
     {
-      $sql = "SELECT * FROM organisaties WHERE email=?;";
+      $sql = "SELECT * FROM klanten WHERE email=?;";
       $stmt = mysqli_stmt_init($conn);
       if(!mysqli_stmt_prepare($stmt, $sql))
       {
@@ -33,7 +33,7 @@
           {
             session_start();
             $_SESSION['email'] = $row['email'];
-            $_SESSION['organisatie'] = $row['naam'];
+            $_SESSION['voornaam'] = $row['voornaam'];
             header("Location: ../loggedin.php");
           }
           else
