@@ -65,7 +65,7 @@
     <div class="d-flex justify-content-center h-100">
       <div class="user_card">
         <div class="d-flex justify-content-center form_container">
-          <form action="includes/signin.php" method="POST" id="form">
+          <form action="includes/add_event.php" method="POST" id="form">
             <div class="input-group mb-3">
               <div class="input-group-append">
                 <span class="input-group-text"> <img src="open-iconic-master/png/person-2x.png" alt="man"> </span>

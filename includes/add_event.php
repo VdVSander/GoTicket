@@ -1,5 +1,5 @@
 <?php
-  if(isset($_POST['event_submit']))
+  if(isset($_POST['event-submit']))
   {
     require 'config.php';
     $eventname = $_POST['event_name'];
@@ -9,49 +9,24 @@
     $location = $_POST['location'];
     $startdate = $_POST['start_date'];
     $stopdate = $_POST['stop_date'];
+    $organisatieid = $_SESSION['organisatieid'];
 
-    //Check if eventname allready exists
-    $sql = "SELECT * FROM evenementen WHERE naam=?;";
+    $sql = "INSERT INTO evenementen (naam,adres,stad,postcode,startdatum,stopdatum,organisaties_organisatieid,locatienaam) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql))
-    {
-      header("Location: ../register.php?error=sqlerror");
-    }
-    else
-    {
-      mysqli_stmt_bind_param($stmt, "s", $eventname);
-      mysqli_stmt_execute($stmt);
-      mysqli_stmt_store_result($stmt);
-      $resultcheck = mysqli_stmt_num_rows($stmt);
-      if($resultcheck > 0)
       {
-        header("Location: ../register.php?error=eventexists");
+        header("Location: ../add_new_event.php?error=sqlerror");
       }
       else
       {
-        //Get the organisatieID from the logged-in company
-        $sql = "SELECT organisatieid FROM organisaties WHERE email=?;";
-        $stmt = mysqli_stmt_init($conn);
-        if(!mysqli_stmt_prepare($stmt, $sql))
-        {
-          header("Location: ../register.php?error=sqlerror");
-        }
-        else
-        {
-          mysqli_stmt_bind_param($stmt, "s", $_SESSION['email']);
-          mysqli_stmt_execute($stmt);
-          mysqli_stmt_store_result($stmt);
-          $resultcheck = mysqli_stmt_num_rows($stmt);
-          if($resultcheck > 1)
-          {
-            header("Location: ../register.php?error=databaseerror");
-          }
-          else
-          {
-            $organisatieid = $stmt['organisatieid'];
-          }
+        mysqli_stmt_bind_param($stmt, "ssssssss", $eventname, $adress, $city, $postalcode, $startdate, $stopdate, $organisatieid, $location);
+        mysqli_stmt_execute($stmt);
+        $message = $eventname." is een nieuw evenement op de website.";
+        mail($to_mail,$subject_reg,$message);
+        header("Location: ../dashboard_add_event_success.php");
       }
-  }
+      mysqli_stmt_close($stmt);
+      mysqli_close($conn);
   else
   {
     header("Location: ../new_event.php?error=btn_not_pressed");
