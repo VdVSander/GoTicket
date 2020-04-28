@@ -106,7 +106,7 @@
               <div class="input-group-append">
                 <span class="input-group-text"> <img src="open-iconic-master/png/key-2x.png" alt="key"> </span>
               </div>
-              <input type="date" name="end_date" id="end_date" class="form-control input_pass" placeholder="Einddatum" required>
+              <input type="date" name="stop_date" id="stop_date" class="form-control input_pass" placeholder="Einddatum" required>
             </div>
             <div class="form-group">
             </div>

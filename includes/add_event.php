@@ -3,7 +3,7 @@
   {
     require 'config.php';
     $eventname = $_POST['event_name'];
-    $adress = $_POST['adress'];
+    $address = $_POST['address'];
     $city = $_POST['city'];
     $postalcode = $_POST['postalcode'];
     $location = $_POST['location'];
@@ -19,7 +19,7 @@
     }
     else
     {
-      mysqli_stmt_bind_param($stmt, "ssssssss", $eventname, $adress, $city, $postalcode, $startdate, $stopdate, $organisatieid, $location);
+      mysqli_stmt_bind_param($stmt, "ssssssss", $eventname, $address, $city, $postalcode, $startdate, $stopdate, $organisatieid, $location);
       mysqli_stmt_execute($stmt);
       $message = $eventname." is een nieuw evenement op de website!";
       mail($to_mail,$subject_reg,$message);
