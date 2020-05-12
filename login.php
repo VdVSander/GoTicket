@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang=nl dir="ltr">
   <head>
@@ -63,6 +63,12 @@
     <div class="user_card">
       <div class="d-flex justify-content-center form_container">
         <form action="includes/signin.php" method="POST" id="form">
+            <p><b>Klant of ticketbedrijf?</b></p>
+            <input type="radio" name="type" id="type" value="klant">
+            <label for="klant">Klant</label><br>
+            <input type="radio" name="type" id="type" value="bedrijf">
+            <label for="bedrijf">Bedrijf</label><br>
+            <p><b>Gegevens</b></p>
           <div class="input-group mb-3">
             <div class="input-group-append">
               <span class="input-group-text"> <img src="open-iconic-master/png/person-2x.png" alt="man"> </span>
