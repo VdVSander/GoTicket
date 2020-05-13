@@ -19,7 +19,7 @@
       <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="menu-active">
-            <a class="menu-active" href="index.php">Home</a>
+            <a class="menu-active" href="index.php">Home</a
           </li>
           <li class="menu-1">
             <a class="menu-1" href="tickets.php">Tickets</a>
