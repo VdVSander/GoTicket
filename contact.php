@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="favicon.ico">
   <script defer src="register_script.js"></script>
+  <script defer src="contact_script.js"></script>
 </head>
 
 <body class="px-5">
@@ -73,7 +74,7 @@
 
           <div class="col-md-6 mb-md-0 mb-5">
               <h2 class="h2-responsive font-weight-bold my-4 text-center">Contactformulier</h2>
-              <form id="contact-form" name="contact-form" action="includes/send_contact.php" method="POST">
+              <form id="contact-form" name="contact-form" method="POST" onSubmit="return validateForm()">
 
 
                   <div class="row">
@@ -119,9 +120,9 @@
                   </div>
 
               <div class="text-center">
-                  <button type="submit" class="btn btn-primary" name="contactb">Contactaanvraag versturen</button>
+                  <input type="submit" class="btn btn-primary" name="contactb" value="Contactaanvraag versturen"/>
               </div>
-              <div class="status"></div>
+              <div id="status"></div>
           </div>
 
   </form>
