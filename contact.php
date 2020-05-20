@@ -11,8 +11,8 @@
   <script defer src="contact_script.js"></script>
 </head>
 
-<body class="px-5">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light py-4">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -20,23 +20,20 @@
     <p style="margin-left:50px">(!) Opgelet! Deze website is een schoolproject en is dus niet in werking.</p>
     <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="menu-active">
-          <a class="menu-active" href="index.php">Home</a>
+        <li class="menu-1 hover-icon mx-3">
+          <a class="menu-1" href="index.php">Home</a>
         </li>
-        <li class="menu-1">
+        <li class="menu-1 hover-icon mx-3">
           <a class="menu-1" href="tickets.php">Tickets</a>
         </li>
-        <li class="menu-1">
-          <a class="menu-1" href="contact.php">Contact</a>
+        <li class="menu-active hover-icon mx-3 mr-2s">
+          <a class="menu-active" href="contact.php">Contact</a>
         </li>
       </ul>
-    </div>
+  </div>
   </nav>
-  <div class="container1">
+  <div class="container1 px-5">
     <div class="row">
-      <div class="box-1">
-        <h1 class="para-1">Contact</h1>
-      </div>
       <div class="box-2">
         <div class="right">
           <button type="button" id="register-button" class="btn btn-primary">Verkoop tickets</button>
@@ -64,7 +61,7 @@
     </div>
   </div>
 
-  <section class="mb-4">
+  <section class="mb-4 px-5">
 
       <h2 class="h1-responsive font-weight-bold text-center my-4">Contacteer ons</h2>
       <p class="text-center w-responsive mx-auto mb-5">Heeft u vragen voor ons? Neem contact op en we beantwoorden deze binnen de 48 uur.</p>

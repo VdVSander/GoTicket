@@ -10,29 +10,29 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-5">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a href="https://www.goticket.be"><img src="GoTicketlogo.png" alt="Logo" style="width:100px;height:40px";></a>
+      <a href="https://www.goticket.be"><img class="mx-4" src="GoTicketlogo.png" alt="Logo" style="width:100px;height:40px";></a>
       <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="menu-active">
+          <li class="menu-active hover-icon mx-3">
             <a class="menu-active" href="index.php">Home</a>
           </li>
-          <li class="menu-1">
+          <li class="menu-1 hover-icon mx-3">
             <a class="menu-1" href="tickets.php">Tickets</a>
           </li>
-          <li class="menu-1">
+          <li class="menu-1 hover-icon mx-3 mr-2s">
             <a class="menu-1" href="contact.php">Contact</a>
           </li>
         </ul>
     </div>
     </nav>
-    <div class="container1">
+    <div class="container-home backg">
       <div class="row">
         <div class="box-1">
-          <h1 class="para-1">Welkom</h1>
+          <h1 class="para-1 mt-4">Welkom op de website van Go Ticket</h1>
         </div>
         <div class="box-2">
           <div class="right">
@@ -50,8 +50,8 @@
               }
               else
               {
-                echo '<button type="button" id="register-button" class="btn btn-primary">Verkoop tickets</button>';
-                echo '<button type="button" id="login-button" class="btn btn-primary">Login</button>';
+                echo '<button type="button" id="register-button" class="btn btn-primary mr-1">Verkoop tickets</button>';
+                echo '<button type="button" id="login-button" class="btn btn-primary ml-1">Login</button>';
               }
              ?>
             <script type="text/javascript">
@@ -74,7 +74,6 @@
     <div class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="d-block w-100" src="achtergrond.jpg" alt="First slide">
         </div>
       </div>
     </div>
@@ -85,7 +84,7 @@
     <div class="row">
       <div class="col">
         <div class="card">
-          <img class="card-img-top" src="No_image.png" alt="Card image cap">
+          <img class="card-img-top" src="images/No_image.png" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p>
@@ -94,7 +93,7 @@
       </div>
       <div class="col">
         <div class="card">
-          <img class="card-img-top" src="No_image.png" alt="Card image cap">
+          <img class="card-img-top" src="images/No_image.png" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p>
@@ -103,7 +102,7 @@
       </div>
       <div class="col">
         <div class="card">
-          <img class="card-img-top" src="No_image.png" alt="Card image cap">
+          <img class="card-img-top" src="images/No_image.png" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p>
@@ -112,7 +111,7 @@
       </div>
       <div class="col">
         <div class="card">
-          <img class="card-img-top" src="No_image.png" alt="Card image cap">
+          <img class="card-img-top" src="images/No_image.png" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p>
