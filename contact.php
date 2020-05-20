@@ -12,12 +12,11 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light py-4">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light py-5">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a href="https://www.goticket.be"><img src="GoTicketlogo.png" alt="Logo" style="width:100px;height:40px" ;></a>
-    <p style="margin-left:50px">(!) Opgelet! Deze website is een schoolproject en is dus niet in werking.</p>
+    <a href="https://www.goticket.be"><img class="mx-4" src="GoTicketlogo.png" alt="Logo" style="width:100px;height:40px";></a>
     <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
         <li class="menu-1 hover-icon mx-3">
