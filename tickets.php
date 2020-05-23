@@ -11,7 +11,7 @@
   </head>
   <body style="background-image: url('achtergrond.jpg'); background-size: cover; background-repeat: no-repeat;
   background-attachment: fixed;">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-5">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -19,13 +19,13 @@
       <p style="margin-left:50px">(!) Opgelet! Deze website is een schoolproject en is dus niet in werking.</p>
       <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="menu-active">
-            <a class="menu-active" href="index.php">Home</a>
+          <li class="menu-1 hover-icon mx-3">
+            <a class="menu-1" href="index.php">Home</a>
           </li>
-          <li class="menu-1">
-            <a class="menu-1" href="tickets.php">Tickets</a>
+          <li class="menu-active hover-icon mx-3">
+            <a class="menu-active" href="tickets.php">Tickets</a>
           </li>
-          <li class="menu-1">
+          <li class="menu-1 hover-icon mx-3 mr-2s">
             <a class="menu-1" href="contact.php">Contact</a>
           </li>
         </ul>

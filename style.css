@@ -5,6 +5,14 @@
   padding: 10px;
 }
 
+.container-home{
+  display: flex;
+  padding: 10px;
+  background-image: url("images/event.jpg");
+  background-position: center;
+  height: 500px;
+}
+
 .container1{
   display: flex;
   padding: 10px;
@@ -67,4 +75,12 @@
   padding: 2px;
   color: red;
   font-size: 15px;
+}
+
+.backg {
+
+}
+
+.hover-icon:hover {
+  list-style-image: url("images/ticket.svg");
 }
