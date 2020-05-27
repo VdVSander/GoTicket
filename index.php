@@ -46,6 +46,7 @@
               else if($_SESSION['klantID']))
               {
                 echo '<h3 style="color:white;"> Welkom '.$_SESSION['naam'].'</h3>';
+                echo '<button type="button" id="account-button" class="btn btn-primary">Account</button>';
                 echo '<button type="button" id="logout-button" class="btn btn-primary">Logout</button>';
               }
               else
@@ -56,15 +57,10 @@
              ?>
             <script type="text/javascript">
                 document.getElementById("login-button").onclick = function () {location.href = "login.php";};
-            </script>
-            <script type="text/javascript">
                 document.getElementById("logout-button").onclick = function () {location.href = "includes/logout.php";};
-            </script>
-            <script type="text/javascript">
                 document.getElementById("dashboard-button").onclick = function () {location.href = "dashboard.php";};
-            </script>
-            <script type="text/javascript">
                 document.getElementById("register-button").onclick = function () {location.href = "register.php";};
+                document.getElementById("account-button").onclick = function() {location.href = "account.php";};
             </script>
           </div>
         </div>
