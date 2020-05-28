@@ -192,21 +192,6 @@
       </div>
       <!--Bottom Table UI-->
     </div>
-<<<<<<< HEAD
-    <form action="includes/add_ticket_type.php" method="post">
-      <label for="Type_naam">Type naam</label>
-      <input type="text" name="Type_naam" value="Type_naam">
-      <label for="Prijs">Prijs per stuk (in €)</label>
-      <input type="number" name="Prijs" value="Prijs">
-      <label for="Aantal">Aantal tickets</label>
-      <input type="number" name="Aantal" value="Aantal">
-      <label for="StartToegang">Start toegang</label>
-      <input type="datetime-local" name="StartToegang" value="StartToegang">
-      <label for="StopToegang">Stop toegang</label>
-      <input type="datetime-local" name="StopToegang" value="StopToegang">
-    </form>
-=======
->>>>>>> db72c962abd73c26c6962c6005ff8dbfd9612c1e
     <!--/.Card content-->
 
   </div>
