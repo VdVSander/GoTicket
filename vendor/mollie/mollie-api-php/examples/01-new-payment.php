@@ -3,13 +3,15 @@
  * How to prepare a new payment with the Mollie API.
  */
 
+use Mollie\Api\Exceptions\ApiException;
+
 try {
     /*
      * Initialize the Mollie API library with your API key.
      *
-     * See: https://www.mollie.com/dashboard/developers/api-keys
+     * See: https://www.mollie.com/dashboard/settings/profiles
      */
-    require "../initialize.php";
+    require "./initialize.php";
 
     /*
      * Generate a unique order id for this example. It is important to include this unique attribute
@@ -35,11 +37,11 @@ try {
     $payment = $mollie->payments->create([
         "amount" => [
             "currency" => "EUR",
-            "value" => "12.50" // You must send the correct number of decimals, thus we enforce the use of strings
+            "value" => "10.00"
         ],
         "description" => "Order #{$orderId}",
-        "redirectUrl" => "{$protocol}://{$hostname}/bedankt-voor-uw-aankoop.php",
-        "webhookUrl" => "{$protocol}://{$hostname}{$path}/webhook.php",
+        "redirectUrl" => "{$protocol}://{$hostname}{$path}/03-return-page.php?order_id={$orderId}",
+        "webhookUrl" => "{$protocol}://{$hostname}{$path}/02-webhook-verification.php",
         "metadata" => [
             "order_id" => $orderId,
         ],
@@ -55,6 +57,17 @@ try {
      * This request should always be a GET, thus we enforce 303 http response code
      */
     header("Location: " . $payment->getCheckoutUrl(), true, 303);
-} catch (\Mollie\Api\Exceptions\ApiException $e) {
+} catch (ApiException $e) {
     echo "API call failed: " . htmlspecialchars($e->getMessage());
+}
+
+/*
+ * NOTE: This example uses a text file as a database. Please use a real database like MySQL in production code.
+ */
+function database_write($orderId, $status)
+{
+    $orderId = intval($orderId);
+    $database = dirname(__FILE__) . "/orders/order-{$orderId}.txt";
+
+    file_put_contents($database, $status);
 }
