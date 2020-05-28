@@ -57,9 +57,17 @@
              ?>
             <script type="text/javascript">
                 document.getElementById("login-button").onclick = function () {location.href = "login.php";};
+            </script>
+            <script type="text/javascript">
                 document.getElementById("logout-button").onclick = function () {location.href = "includes/logout.php";};
+            </script>
+            <script type="text/javascript">
                 document.getElementById("dashboard-button").onclick = function () {location.href = "dashboard.php";};
+            </script>
+            <script type="text/javascript">
                 document.getElementById("register-button").onclick = function () {location.href = "register.php";};
+            </script>
+            <script type="text/javascript">
                 document.getElementById("account-button").onclick = function() {location.href = "account.php";};
             </script>
           </div>

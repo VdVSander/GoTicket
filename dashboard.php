@@ -104,12 +104,34 @@
                   echo '<td>' . $row['naam'] . '</td>';
                   echo '<td>' . $row['startdatum'] . '</td>';
                   echo '<td>' . $row['stopdatum'] . '</td>';
-                  $sql = 'SELECT SUM(aantal) FROM tickettypes HAVING evenementid=' . $row['evenementid'];
-                  $aantaltickets = $conn->query($sql);
-                  echo '<td>' . $aantaltickets . '</td>';
-                  $sql = 'SELECT SUM(aantalverkocht) FROM tickettypes HAVING evenementid=' . $row['evenementid'];
-                  $aantalticketsverkocht = $conn->query($sql);
-                  echo '<td>' . $aantalticketsverkocht . '</td>';
+
+                  $sql = "SELECT SUM(aantal) FROM tickettypes WHERE evenementid=?;";
+                  $stmt = mysqli_stmt_init($conn);
+                  if(!mysqli_stmt_prepare($stmt, $sql))
+                  {
+                    header("Location: ../login.php?error=SQL_error1");
+                  }
+                  else
+                  {
+                    mysqli_stmt_bind_param($stmt, "i", $row['evenementid']);
+                    mysqli_stmt_execute($stmt);
+                    $result = mysqli_stmt_get_result($stmt);
+                  }
+                  echo '<td>' . strval($result) . '</td>';
+
+                  $sql = 'SELECT SUM(aantalverkocht) FROM tickettypes WHERE evenementid=' . $row['evenementid'] . ';';
+                  $stmt = mysqli_stmt_init($conn);
+                  if(!mysqli_stmt_prepare($stmt, $sql))
+                  {
+                    header("Location: ../login.php?error=SQL_error1");
+                  }
+                  else
+                  {
+                    mysqli_stmt_bind_param($stmt, "i", $row['evenementid']);
+                    mysqli_stmt_execute($stmt);
+                    $result = mysqli_stmt_get_result($stmt);
+                  }
+                  echo '<td>' . strval($result) . '</td>';
                 }
               }
               else
@@ -190,8 +212,19 @@
       </div>
       <!--Bottom Table UI-->
     </div>
+    <form action="includes/add_ticket_type.php" method="post">
+      <label for="Type_naam">Type naam</label>
+      <input type="text" name="Type_naam" value="Type_naam">
+      <label for="Prijs">Prijs per stuk (in €)</label>
+      <input type="number" name="Prijs" value="Prijs">
+      <label for="Aantal">Aantal tickets</label>
+      <input type="number" name="Aantal" value="Aantal">
+      <label for="StartToegang">Start toegang</label>
+      <input type="datetime" name="StartToegang" value="StartToegang">
+      <label for="StopToegang">Stop toegang</label>
+      <input type="datetime" name="StopToegang" value="StopToegang">
+    </form>
     <!--/.Card content-->
-
   </div>
 
 </body>
