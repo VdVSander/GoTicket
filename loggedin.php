@@ -67,7 +67,6 @@
           if(isset($_SESSION['organisatieID']))
           {
             echo '<p>Je bent ingelogged als: '.$_SESSION['organisatie'].'</p>';
-            echo '<p>Je bent ingelogged als: '.$_SESSION['organisatieID'].'</p>';
           }
           else if(isset($_SESSION['klantID']))
           {

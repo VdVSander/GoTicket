@@ -9,14 +9,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
   </head>
-  <body style="background-image: url('achtergrond.jpg'); background-size: cover; background-repeat: no-repeat;
-  background-attachment: fixed;">
+  <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light py-5">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a href="https://www.goticket.be"><img src="GoTicketlogo.png" alt="Logo" style="width:100px;height:40px";></a>
-      <p style="margin-left:50px">(!) Opgelet! Deze website is een schoolproject en is dus niet in werking.</p>
+      <a href="https://www.goticket.be"><img class="mx-4" src="GoTicketlogo.png" alt="Logo" style="width:100px;height:40px";></a>
       <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="menu-1 hover-icon mx-3">
@@ -38,7 +36,7 @@
         </div>
         <div class="box-2">
           <div class="right">
-            <button type="button" id="register-button" class="btn btn-primary">Account</button>
+            <button type="button" id="register-button" class="btn btn-primary">Verkoop tickets</button>
             <?php
               if(isset($_SESSION['email']))
               {
@@ -59,24 +57,12 @@
                 document.getElementById("register-button").onclick = function () {location.href = "register.php";};
             </script>
           </div>
+          <form  action="includes/send_new_pwd.php" method="post">
+            <label for="email">Geef hier je email in.</label>
+            <input type="email" name="email">
+            <button type="submit" name="submit_button">Verzend</button>
+          </form>
         </div>
-      </div>
-      <div>
-        <p>wachtwoord veranderen:</p>
-        <form class="" action="includes/change_pwd.php" method="post">
-          <label for="old_pwd">Oud wachtwoord</label>
-          <input type="password" name="old_pwd">
-          <label for="new_pwd">Nieuw wachtwoord</label>
-          <input type="password" name="new_pwd">
-          <label for="new_pwd_rep">Nieuw wachtwoord herhaald</label>
-          <input type="password" name="new_pwd_rep">
-          <button type="submit" name="submit_button">Verander</button>
-        </form>
-      </div>
-      <div>
-        <form action="includes/generate_ticket.php" method="post">
-          <button type="submit" name="button">Test QR</button>
-        </form>
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
