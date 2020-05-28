@@ -123,7 +123,7 @@
             $conn->close();
           }
           ?>
-          <a href="#" class="btn btn-primary">Kopen</a>
+          <a href="https://www.andalusianexperiences.com/payments/create-payment.php" class="btn btn-primary">Kopen</a>
         </div>
       </div>
 
