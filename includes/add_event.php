@@ -1,4 +1,5 @@
 <?php
+  session_start();
   if(isset($_POST['event-submit']))
   {
     require 'config.php';
@@ -19,8 +20,10 @@
     }
     else
     {
-      mysqli_stmt_bind_param($stmt,"sssissis", $eventname, $address, $city, $postalcode, $startdate, $stopdate, $organisatieid, $location);
+      mysqli_stmt_bind_param($stmt,"ssssssss", $eventname, $address, $city, $postalcode, $startdate, $stopdate, $organisatieid, $location);
       mysqli_stmt_execute($stmt);
+      echo $organisatieid;
+      //var_dump($stmt);
       $message = $eventname." is een nieuw evenement op de website!";
       mail($to_mail,$subject_reg,$message);
       header("Location: ../add_new_event.php?success");

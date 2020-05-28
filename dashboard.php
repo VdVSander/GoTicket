@@ -74,45 +74,53 @@
             <tr>
               <th>#</th>
               <th>Evenementnaam</th>
-              <th>Type ticket</th>
-              <th>Prijs per ticket</th>
+              <th>Start datum</th>
+              <th>Stop datum</th>
               <th>Totaal aantal tickets</th>
               <th>Verkocht aantal tickets</th>
-              <th>Percentage verkocht</th>
             </tr>
           </thead>
 
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Tomorrowland</td>
-              <td>weekend</td>
-              <td>€350,00</td>
-              <td>150</td>
-              <td>25</td>
-              <td>16%</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Tomorrowland</td>
-              <td>VIP</td>
-              <td>€560,00</td>
-              <td>100</td>
-              <td>10</td>
-              <td>10%</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Snelle</td>
-              <td>Staanplaats</td>
-              <td>€45,00</td>
-              <td>5000</td>
-              <td>2865</td>
-              <td>57%</td>
-            </tr>
-          </tbody>
-        </table>
-
+          <?php
+            require 'includes/config.php';
+            $organisatieID = $_SESSION['organisatieID'];
+            $sql = "SELECT * FROM evenementen WHERE organisaties_organisatieid=?;";
+            $stmt = mysqli_stmt_init($conn);
+            if(!mysqli_stmt_prepare($stmt, $sql))
+            {
+              header("Location: ../login.php?error=SQL_error1");
+            }
+            else
+            {
+              mysqli_stmt_bind_param($stmt, "s", $organisatieID);
+              mysqli_stmt_execute($stmt);
+              $result = mysqli_stmt_get_result($stmt);
+              if ($result->num_rows > 0)
+              {
+                while($row = $result->fetch_assoc())
+                {
+                  echo '<tr><th scope="row">' . $row['evenementid'] . '</th>';
+                  echo '<td>' . $row['naam'] . '</td>';
+                  echo '<td>' . $row['startdatum'] . '</td>';
+                  echo '<td>' . $row['stopdatum'] . '</td>';
+                  $sql = 'SELECT SUM(aantal) FROM tickettypes HAVING evenementid=' . $row['evenementid'];
+                  $aantaltickets = $conn->query($sql);
+                  echo '<td>' . $aantaltickets . '</td>';
+                  $sql = 'SELECT SUM(aantalverkocht) FROM tickettypes HAVING evenementid=' . $row['evenementid'];
+                  $aantalticketsverkocht = $conn->query($sql);
+                  echo '<td>' . $aantalticketsverkocht . '</td>';
+                }
+              }
+              else
+              {
+                echo "0 evenementen";
+              }
+              $conn->close();
+            }
+          ?>
+        </tbody>
+      </table>
       </div>
       <hr class="my-0">
 
