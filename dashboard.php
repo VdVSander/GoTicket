@@ -201,9 +201,9 @@
       <label for="Aantal">Aantal tickets</label>
       <input type="number" name="Aantal" value="Aantal">
       <label for="StartToegang">Start toegang</label>
-      <input type="datetime" name="StartToegang" value="StartToegang">
+      <input type="datetime-local" name="StartToegang" value="StartToegang">
       <label for="StopToegang">Stop toegang</label>
-      <input type="datetime" name="StopToegang" value="StopToegang">
+      <input type="datetime-local" name="StopToegang" value="StopToegang">
     </form>
     <!--/.Card content-->
   </div>
