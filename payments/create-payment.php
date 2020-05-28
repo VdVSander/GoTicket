@@ -38,7 +38,7 @@ try {
             "value" => "12.50" // You must send the correct number of decimals, thus we enforce the use of strings
         ],
         "description" => "Order #{$orderId}",
-        "redirectUrl" => "{$protocol}://{$hostname}{$path}/return.php?order_id={$orderId}",
+        "redirectUrl" => "{$protocol}://{$hostname}/bedankt-voor-uw-aankoop.php",
         "webhookUrl" => "{$protocol}://{$hostname}{$path}/webhook.php",
         "metadata" => [
             "order_id" => $orderId,
