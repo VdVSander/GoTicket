@@ -64,7 +64,14 @@
       </div>
       <div class="container1">
         <?php
-          echo '<p>Je bent ingelogged als: '.$_SESSION['organisatie'].'</p>';
+          if(isset($_SESSION['organisatieID']))
+          {
+            echo '<p>Je bent ingelogged als: '.$_SESSION['organisatie'].'</p>';
+          }
+          else if(isset($_SESSION['klantID']))
+          {
+            echo '<p>Je bent ingelogged als: '.$_SESSION['naam'].'</p>';
+          }
          ?>
       </div>
     </div>

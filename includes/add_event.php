@@ -19,7 +19,7 @@
     }
     else
     {
-      mysqli_stmt_bind_param($stmt, "ssssssss", $eventname, $address, $city, $postalcode, $startdate, $stopdate, $organisatieid, $location);
+      mysqli_stmt_bind_param($stmt,"sssissis", $eventname, $address, $city, $postalcode, $startdate, $stopdate, $organisatieid, $location);
       mysqli_stmt_execute($stmt);
       $message = $eventname." is een nieuw evenement op de website!";
       mail($to_mail,$subject_reg,$message);
