@@ -92,8 +92,8 @@
             $conn->close();
           }
         ?>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <h6>Tickettypes</h6>
+          <p class="card-text">Binnenkort beschrijving?</p>
+          <h6>Tickettype(s)</h6>
           <?php
           require 'includes/config.php';
           $sql = "SELECT typenaam, prijs, aantal-aantalverkocht as beschikbaar FROM tickettypes WHERE evenementid=3;";
