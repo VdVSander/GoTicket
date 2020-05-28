@@ -104,6 +104,7 @@
                   echo '<td>' . $row['naam'] . '</td>';
                   echo '<td>' . $row['startdatum'] . '</td>';
                   echo '<td>' . $row['stopdatum'] . '</td>';
+<<<<<<< HEAD
 
                   $sql = "SELECT SUM(aantal) FROM tickettypes WHERE evenementid=?;";
                   $stmt = mysqli_stmt_init($conn);
@@ -132,6 +133,17 @@
                     $result = mysqli_stmt_get_result($stmt);
                   }
                   echo '<td>' . strval($result) . '</td>';
+=======
+                  $eventid = $row['evenementid'];
+                  $sql = "SELECT SUM(aantal) FROM tickettypes WHERE evenementid=$eventid;";
+                  echo $sql;
+                  $aantaltickets = $conn->query($sql);
+                  echo $aantaltickets;
+                  echo '<td>' . 'test' . $aantaltickets . '</td>';
+                  $sql = "SELECT SUM(aantalverkocht) FROM tickettypes WHERE evenementid=$eventid;";
+                  $aantalticketsverkocht = $conn->query($sql);
+                  echo '<td>' . $aantalticketsverkocht . '</td>';
+>>>>>>> 4fe22a0dd5ed1499ee59be7614a2967a7165a3cc
                 }
               }
               else
