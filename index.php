@@ -82,8 +82,36 @@
         <div class="card">
           <img class="card-img-top" src="images/No_image.png" alt="Card image cap">
           <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
+            <?php
+              require 'includes/config.php';
+              $eventID = '2';
+              $sql = "SELECT * FROM evenementen WHERE evenementid=?;";
+              $stmt = mysqli_stmt_init($conn);
+              if(!mysqli_stmt_prepare($stmt, $sql))
+              {
+                echo "Location: ../login.php?error=SQL_error1";
+              }
+              else
+              {
+                mysqli_stmt_bind_param($stmt, "s", $eventID);
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
+                if ($result->num_rows > 0)
+                {
+                  while($row = $result->fetch_assoc())
+                  {
+                    echo '<h2>' . $row['naam'] . '</h2>';
+                    echo '<p>Van ' . $row['startdatum'] . '</p>';
+                    echo '<p>Tot ' . $row['stopdatum'] . '</p>';
+                  }
+                }
+                else
+                {
+                  echo "0 evenementen";
+                }
+                $conn->close();
+              }
+            ?>
           </div>
         </div>
       </div>
@@ -91,8 +119,36 @@
         <div class="card">
           <img class="card-img-top" src="images/No_image.png" alt="Card image cap">
           <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
+            <?php
+              require 'includes/config.php';
+              $eventID = '3';
+              $sql = "SELECT * FROM evenementen WHERE evenementid=?;";
+              $stmt = mysqli_stmt_init($conn);
+              if(!mysqli_stmt_prepare($stmt, $sql))
+              {
+                echo "Location: ../login.php?error=SQL_error1";
+              }
+              else
+              {
+                mysqli_stmt_bind_param($stmt, "s", $eventID);
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
+                if ($result->num_rows > 0)
+                {
+                  while($row = $result->fetch_assoc())
+                  {
+                    echo '<h2>' . $row['naam'] . '</h2>';
+                    echo '<p>Van ' . $row['startdatum'] . '</p>';
+                    echo '<p>Tot ' . $row['stopdatum'] . '</p>';
+                  }
+                }
+                else
+                {
+                  echo "0 evenementen";
+                }
+                $conn->close();
+              }
+            ?>
           </div>
         </div>
       </div>
@@ -100,8 +156,36 @@
         <div class="card">
           <img class="card-img-top" src="images/No_image.png" alt="Card image cap">
           <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
+            <?php
+              require 'includes/config.php';
+              $eventID = '4';
+              $sql = "SELECT * FROM evenementen WHERE evenementid=?;";
+              $stmt = mysqli_stmt_init($conn);
+              if(!mysqli_stmt_prepare($stmt, $sql))
+              {
+                echo "Location: ../login.php?error=SQL_error1";
+              }
+              else
+              {
+                mysqli_stmt_bind_param($stmt, "s", $eventID);
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
+                if ($result->num_rows > 0)
+                {
+                  while($row = $result->fetch_assoc())
+                  {
+                    echo '<h2>' . $row['naam'] . '</h2>';
+                    echo '<p>Van ' . $row['startdatum'] . '</p>';
+                    echo '<p>Tot ' . $row['stopdatum'] . '</p>';
+                  }
+                }
+                else
+                {
+                  echo "0 evenementen";
+                }
+                $conn->close();
+              }
+            ?>
           </div>
         </div>
       </div>
