@@ -37,7 +37,7 @@
           $passwordHashed = password_hash($password, PASSWORD_DEFAULT);
           mysqli_stmt_bind_param($stmt, "sssss", $firstname, $surname , $email, $birthdate, $passwordHashed);
           mysqli_stmt_execute($stmt);
-          $message = $name." heeft zich geregistreerd op de website!";
+          $message = $surname." heeft zich geregistreerd op de website!";
           mail($to_mail,$subject_reg,$message);
           header("Location: ../registered_new_user.php");
         }
