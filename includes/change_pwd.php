@@ -30,7 +30,7 @@
           }
           else if ($pwdCheck == true)
           {
-            $sql = "UPDATE klanten SET password = ? WHERE klantid = ?;";
+            $sql = "UPDATE klanten SET wachtwoord = ? WHERE klantid = ?;";
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt, $sql))
             {

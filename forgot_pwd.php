@@ -57,9 +57,9 @@
                 document.getElementById("register-button").onclick = function () {location.href = "register.php";};
             </script>
           </div>
-          <form  action="send_new_pwd.php" method="post">
+          <form  action="includes/send_new_pwd.php" method="post">
             <label for="email">Geef hier je email in.</label>
-            <input type="email" name="email" value="email">
+            <input type="email" name="email">
             <button type="submit" name="submit_button">Verzend</button>
           </form>
         </div>

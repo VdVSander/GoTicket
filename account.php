@@ -65,11 +65,11 @@
         <p>wachtwoord veranderen:</p>
         <form class="" action="includes/change_pwd.php" method="post">
           <label for="old_pwd">Oud wachtwoord</label>
-          <input type="password" name="old_pwd" value="old_pwd">
+          <input type="password" name="old_pwd">
           <label for="new_pwd">Nieuw wachtwoord</label>
-          <input type="password" name="new_pwd" value="new_pwd">
+          <input type="password" name="new_pwd">
           <label for="new_pwd_rep">Nieuw wachtwoord herhaald</label>
-          <input type="password" name="new_pwd_rep" value="new_pwd_rep">
+          <input type="password" name="new_pwd_rep">
           <button type="submit" name="submit_button">Verander</button>
         </form>
       </div>

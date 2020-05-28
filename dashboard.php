@@ -105,12 +105,20 @@
                   echo '<td>' . $row['startdatum'] . '</td>';
                   echo '<td>' . $row['stopdatum'] . '</td>';
                   $eventid = $row['evenementid'];
+<<<<<<< HEAD
                   $sql = "SELECT SUM(aantal) AS tot FROM tickettypes WHERE evenementid=$eventid;";
+=======
+                  $sql = "SELECT SUM(aantal) FROM tickettypes WHERE evenementid=$eventid";
+>>>>>>> 23657900f78a78bd92d0fcd4605ff2a4dae7a5d9
                   echo $sql;
                   $aantaltickets = $conn->query($sql);
                   echo $aantaltickets;
                   echo '<td>' . 'test' . $aantaltickets . '</td>';
+<<<<<<< HEAD
                   $sql = "SELECT SUM(aantalverkocht) as tot FROM tickettypes WHERE evenementid=$eventid;";
+=======
+                  $sql = "SELECT SUM(aantalverkocht) FROM tickettypes WHERE evenementid=$eventid";
+>>>>>>> 23657900f78a78bd92d0fcd4605ff2a4dae7a5d9
                   $aantalticketsverkocht = $conn->query($sql);
                   echo '<td>' . $aantalticketsverkocht . '</td>';
                 }

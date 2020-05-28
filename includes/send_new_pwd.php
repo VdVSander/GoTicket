@@ -19,11 +19,11 @@ if(isset($_POST['submit_button']))
     {
       $new_pwd = generateRandomString();
 
-      $sql = "UPDATE klanten SET password = ? WHERE email = ?;";
+      $sql = "UPDATE klanten SET wachtwoord = ? WHERE email = ?;";
       $stmt = mysqli_stmt_init($conn);
       if(!mysqli_stmt_prepare($stmt, $sql))
       {
-        header("Location: ../account.php?error=sqlerror2");
+        header("Location: ../index.php?error=sqlerror2");
       }
       else
       {
@@ -35,7 +35,8 @@ if(isset($_POST['submit_button']))
         header("Location: ../account.php?new_pwd=sent");
       }
     }
-
+  }
+}
     function generateRandomString($length = 10)
     {
       $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
