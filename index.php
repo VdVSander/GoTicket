@@ -43,7 +43,7 @@
                 echo '<button type="button" id="dashboard-button" class="btn btn-primary">Dashboard</button>';
                 echo '<button type="button" id="logout-button" class="btn btn-primary">Logout</button>';
               }
-              else if($_SESSION['klantID']))
+              else if(isset($_SESSION['klantID']))
               {
                 echo '<h3 style="color:white;"> Welkom '.$_SESSION['naam'].'</h3>';
                 echo '<button type="button" id="account-button" class="btn btn-primary">Account</button>';
