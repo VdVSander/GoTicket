@@ -59,6 +59,127 @@
           </div>
         </div>
       </div>
+        <section class="mb-4 px-5">
+    <div class="row mx-auto">
+      <div class="col-md-6 mb-md-0 mb-5">
+
+            <img src="images/No_image.png" alt="Card image cap">
+        </div>
+
+        <div class="col-md-6 text-center">
+          <?php
+            require 'includes/config.php';
+            $eventID = '4';
+            $sql = "SELECT * FROM evenementen WHERE evenementid=?;";
+            $stmt = mysqli_stmt_init($conn);
+            if(!mysqli_stmt_prepare($stmt, $sql))
+            {
+              echo "Location: ../login.php?error=SQL_error1";
+            }
+            else
+            {
+              mysqli_stmt_bind_param($stmt, "s", $eventID);
+              mysqli_stmt_execute($stmt);
+              $result = mysqli_stmt_get_result($stmt);
+              if ($result->num_rows > 0)
+              {
+                while($row = $result->fetch_assoc())
+                {
+                  echo '<h2>' . $row['naam'] . '</h2>';
+                  echo '<p>Van ' . $row['startdatum'] . ' ';
+                  echo 'tot ' . $row['stopdatum'] . '</p>';
+                }
+              }
+              else
+              {
+                echo "0 evenementen";
+              }
+              $conn->close();
+            }
+          ?>
+        </div>
+
+    </div>
+    <div class="row mx-auto">
+
+        <div class="col-md-6 mb-md-0 mb-5">
+            <img src="images/No_image.png" alt="Card image cap">
+        </div>
+
+        <div class="col-md-6 text-center">
+          <?php
+            require 'includes/config.php';
+            $eventID = '4';
+            $sql = "SELECT * FROM evenementen WHERE evenementid=?;";
+            $stmt = mysqli_stmt_init($conn);
+            if(!mysqli_stmt_prepare($stmt, $sql))
+            {
+              echo "Location: ../login.php?error=SQL_error1";
+            }
+            else
+            {
+              mysqli_stmt_bind_param($stmt, "s", $eventID);
+              mysqli_stmt_execute($stmt);
+              $result = mysqli_stmt_get_result($stmt);
+              if ($result->num_rows > 0)
+              {
+                while($row = $result->fetch_assoc())
+                {
+                  echo '<h2>' . $row['naam'] . '</h2>';
+                  echo '<p>Van ' . $row['startdatum'] . ' ';
+                  echo 'tot ' . $row['stopdatum'] . '</p>';
+                }
+              }
+              else
+              {
+                echo "0 evenementen";
+              }
+              $conn->close();
+            }
+          ?>
+        </div>
+
+    </div>
+    <div class="row mx-auto">
+
+        <div class="col-md-6 mb-md-0 mb-5">
+            <img src="images/No_image.png" alt="Card image cap">
+        </div>
+
+        <div class="col-md-6 text-center">
+          <?php
+            require 'includes/config.php';
+            $eventID = '4';
+            $sql = "SELECT * FROM evenementen WHERE evenementid=?;";
+            $stmt = mysqli_stmt_init($conn);
+            if(!mysqli_stmt_prepare($stmt, $sql))
+            {
+              echo "Location: ../login.php?error=SQL_error1";
+            }
+            else
+            {
+              mysqli_stmt_bind_param($stmt, "s", $eventID);
+              mysqli_stmt_execute($stmt);
+              $result = mysqli_stmt_get_result($stmt);
+              if ($result->num_rows > 0)
+              {
+                while($row = $result->fetch_assoc())
+                {
+                  echo '<h2>' . $row['naam'] . '</h2>';
+                  echo '<p>Van ' . $row['startdatum'] . ' ';
+                  echo 'tot ' . $row['stopdatum'] . '</p>';
+                }
+              }
+              else
+              {
+                echo "0 evenementen";
+              }
+              $conn->close();
+            }
+          ?>
+        </div>
+      </div>
+    </section>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
