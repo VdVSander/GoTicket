@@ -59,127 +59,77 @@
           </div>
         </div>
       </div>
-        <section class="mb-4 px-5">
-    <div class="row mx-auto">
-      <div class="col-md-6 mb-md-0 mb-5">
 
-            <img src="images/No_image.png" alt="Card image cap">
-        </div>
 
-        <div class="col-md-6 text-center">
-          <?php
-            require 'includes/config.php';
-            $eventID = '4';
-            $sql = "SELECT * FROM evenementen WHERE evenementid=?;";
-            $stmt = mysqli_stmt_init($conn);
-            if(!mysqli_stmt_prepare($stmt, $sql))
+      <div class="card">
+        <?php
+          require 'includes/config.php';
+          $eventID = '3';
+          $sql = "SELECT * FROM evenementen WHERE evenementid=?;";
+          $stmt = mysqli_stmt_init($conn);
+          if(!mysqli_stmt_prepare($stmt, $sql))
+          {
+            echo "Location: ../login.php?error=SQL_error1";
+          }
+          else
+          {
+            mysqli_stmt_bind_param($stmt, "s", $eventID);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+            if ($result->num_rows > 0)
             {
-              echo "Location: ../login.php?error=SQL_error1";
+              while($row = $result->fetch_assoc())
+              {
+                echo '<div class="card-header">' . $row['naam'] . '</div>';
+                echo '<div class="card-body"><h5 class="card-title">Van ' . $row['startdatum'] . ' ';
+                echo 'tot ' . $row['stopdatum'] . '</h5>';
+              }
             }
             else
             {
-              mysqli_stmt_bind_param($stmt, "s", $eventID);
-              mysqli_stmt_execute($stmt);
-              $result = mysqli_stmt_get_result($stmt);
-              if ($result->num_rows > 0)
-              {
-                while($row = $result->fetch_assoc())
-                {
-                  echo '<h2>' . $row['naam'] . '</h2>';
-                  echo '<p>Van ' . $row['startdatum'] . ' ';
-                  echo 'tot ' . $row['stopdatum'] . '</p>';
-                }
-              }
-              else
-              {
-                echo "0 evenementen";
-              }
-              $conn->close();
+              echo "0 evenementen";
             }
-          ?>
-        </div>
-
-    </div>
-    <div class="row mx-auto">
-
-        <div class="col-md-6 mb-md-0 mb-5">
-            <img src="images/No_image.png" alt="Card image cap">
-        </div>
-
-        <div class="col-md-6 text-center">
+            $conn->close();
+          }
+        ?>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <h6>Tickettypes</h6>
           <?php
-            require 'includes/config.php';
-            $eventID = '4';
-            $sql = "SELECT * FROM evenementen WHERE evenementid=?;";
-            $stmt = mysqli_stmt_init($conn);
-            if(!mysqli_stmt_prepare($stmt, $sql))
+          require 'includes/config.php';
+          $sql = "SELECT typenaam, prijs, aantal-aantalverkocht as beschikbaar FROM tickettypes WHERE evenementid=3;";
+          $stmt = mysqli_stmt_init($conn);
+          if(!mysqli_stmt_prepare($stmt, $sql))
+          {
+            header("Location: ../login.php?error=SQL_error1");
+          }
+          else
+          {
+            mysqli_stmt_bind_param($stmt, "s", $organisatieID);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+            if ($result->num_rows > 0)
             {
-              echo "Location: ../login.php?error=SQL_error1";
+              while($row = $result->fetch_assoc())
+              {
+                echo '<p>Naam: ' . $row['typenaam'] . '</p> ';
+                echo '<p>Prijs: €'. $row['prijs'] . '</p> ';
+                echo '<p>Aantal beschikbaar: ' . $row['beschikbaar'] .'</p>';
+              }
             }
             else
             {
-              mysqli_stmt_bind_param($stmt, "s", $eventID);
-              mysqli_stmt_execute($stmt);
-              $result = mysqli_stmt_get_result($stmt);
-              if ($result->num_rows > 0)
-              {
-                while($row = $result->fetch_assoc())
-                {
-                  echo '<h2>' . $row['naam'] . '</h2>';
-                  echo '<p>Van ' . $row['startdatum'] . ' ';
-                  echo 'tot ' . $row['stopdatum'] . '</p>';
-                }
-              }
-              else
-              {
-                echo "0 evenementen";
-              }
-              $conn->close();
+              echo "0 evenementen";
             }
+            $conn->close();
+          }
           ?>
-        </div>
-
-    </div>
-    <div class="row mx-auto">
-
-        <div class="col-md-6 mb-md-0 mb-5">
-            <img src="images/No_image.png" alt="Card image cap">
-        </div>
-
-        <div class="col-md-6 text-center">
-          <?php
-            require 'includes/config.php';
-            $eventID = '4';
-            $sql = "SELECT * FROM evenementen WHERE evenementid=?;";
-            $stmt = mysqli_stmt_init($conn);
-            if(!mysqli_stmt_prepare($stmt, $sql))
-            {
-              echo "Location: ../login.php?error=SQL_error1";
-            }
-            else
-            {
-              mysqli_stmt_bind_param($stmt, "s", $eventID);
-              mysqli_stmt_execute($stmt);
-              $result = mysqli_stmt_get_result($stmt);
-              if ($result->num_rows > 0)
-              {
-                while($row = $result->fetch_assoc())
-                {
-                  echo '<h2>' . $row['naam'] . '</h2>';
-                  echo '<p>Van ' . $row['startdatum'] . ' ';
-                  echo 'tot ' . $row['stopdatum'] . '</p>';
-                }
-              }
-              else
-              {
-                echo "0 evenementen";
-              }
-              $conn->close();
-            }
-          ?>
+          <a href="#" class="btn btn-primary">Kopen</a>
         </div>
       </div>
-    </section>
+
+
+
+
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
