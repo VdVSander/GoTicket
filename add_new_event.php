@@ -32,9 +32,10 @@
     </div>
     </nav>
     <div class="container1">
+
       <div class="row">
+
         <div class="box-1">
-          <h1 class="para-1">Nieuw evenement</h1>
         </div>
         <div class="box-2">
           <div class="right">
@@ -62,7 +63,9 @@
         </div>
       </div>
     </div>
+    <h1 class="text-center mb-4">Nieuw evenement</h1>
     <div class="d-flex justify-content-center h-100">
+
       <div class="user_card">
         <div class="d-flex justify-content-center form_container">
           <form action="includes/add_event.php" method="POST" id="form">

@@ -49,7 +49,7 @@
       </div>
 
       <h1>Dashboard</h1>
-
+      <a href="/add_new_event.php" class="btn btn-primary mr-1">Evenement toevoegen</a>
       <div>
         <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
           <i class="fas fa-pencil-alt mt-0"></i> </button>
@@ -238,7 +238,69 @@
       <!--Bottom Table UI-->
     </div>
     <!--/.Card content-->
+      <div class="container">
+    <h1 class="text-center mb-4">Tickettype toevoegen</h1>
+    <form id="contact-form" name="contact-form" method="POST" onSubmit="return validateForm()">
 
+        <div class="row">
+            <div class="col-md-12">
+                <div class="md-form mb-0">
+                    <label for="event">Welk event?</label>
+                    <select name="event" id="event" class="form-control">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="fiat">Fiat</option>
+                    <option value="audi">Audi</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="md-form mb-0">
+                  <label for="name" class="">Ticketnaam</label>
+                  <input type="text" id="name" name="name" class="form-control">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="md-form mb-0 mt-2">
+                  <label for="price" class="">Ticketprijs: €</label>
+                  <input type="number" id="price" name="price" min="5">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="md-form mb-0">
+                  <label for="start">Start geldigheid</label>
+                  <input type="datetime-local" id="start" name="start">
+                </div>
+            </div>
+          </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="md-form mb-0">
+                  <label for="stop">Stop geldigheid</label>
+                  <input type="datetime-local" id="stop" name="stop">
+                </div>
+            </div>
+          </div>
+
+
+
+    <div class="text-center mb-5">
+        <input type="submit" class="btn btn-primary" name="contactb" value="Tickettype toevoegen"/>
+    </div>
+    <div id="status"></div>
+</div>
+
+</form>
   </div>
+</div>
 
 </body>
